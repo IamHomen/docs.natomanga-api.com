@@ -1,0 +1,94 @@
+---
+title: NatoManga | Hot Manga 
+---
+
+import { Tab, Tabs } from "nextra-theme-docs";
+
+# Get Hot Manga
+
+Technical details regarding the usage of the get Hot Manga function for the NatoManga provider can be found below. Example code is provided for both JavaScript and Python, along with a response schema.
+
+## Route Schema (URL)
+
+```
+http:localhost:3000/hot-manga?page={page}
+```
+
+## Query Parameters
+
+| Parameter |  Type  | Description                                                                                              | Required? | Default |
+| :-------: | :----: | -------------------------------------------------------------------------------------------------------- | :-------: | :-----: |
+| page | string | Page Number |    No    |    1     |
+
+## Request Samples
+
+<Tabs items={["JavaScript", "Python"]}>
+  <Tab>
+    <>
+        ```js
+        import axios from "axios";
+
+        const url = "http:localhost:3000/hot-manga?page={page}";
+        const data = async () => {
+            try {
+                const { data } = await axios.get(url);
+                return data;
+            } catch (err) {
+                throw new Error(err.message);
+            }
+        };
+
+        console.log(data);
+        ```
+    </>
+
+  </Tab>
+  <Tab>
+    <>
+        ```python
+        import requests
+
+        url = "http:localhost:3000/hot-manga?page={page}"
+        response = requests.get(url)
+        data = response.json()
+
+        print(data)
+        ```
+    </>
+
+  </Tab>
+</Tabs>
+
+## Response Schema
+
+<Tabs items={["200 OK", "404 Not Found", "500 Internal Server Error"]}>
+  <Tab>
+  **MIME Type:** `application/json`
+  ```json copy=false
+  [
+    {
+      "title": "string",
+      "cover": "string",
+      "id": "string",
+      "latest_chapter": "string",
+      "latest_chapter_id": "string",
+      "views": "string",
+      "description": "string"
+    },
+    ...
+  ]
+  ```
+  </Tab>
+  <Tab>
+  **MIME Type:** `application/json`
+  ```json copy=false
+  "message": {}
+  ```
+  </Tab>
+  <Tab>
+  **MIME Type:** `application/json`
+  ```json copy=false
+  "message": {}
+  ```
+  </Tab>
+</Tabs>

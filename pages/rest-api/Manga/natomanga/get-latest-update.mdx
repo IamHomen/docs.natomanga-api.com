@@ -1,0 +1,93 @@
+---
+title: NatoManga | Manga Latest Chapter Update
+---
+
+import { Tab, Tabs } from "nextra-theme-docs";
+
+# Get Manga Chapter Pages
+
+Technical details regarding the usage of the get Manga Latest Chapter Update function for the NatoManga provider can be found below. Example code is provided for both JavaScript and Python, along with a response schema.
+
+## Route Schema (URL)
+
+```
+http:localhost:3000/latest-manga?page={page}
+```
+
+## Query Parameters
+
+| Parameter |  Type  | Description                                                                                              | Required? | Default |
+| :-------: | :----: | -------------------------------------------------------------------------------------------------------- | :-------: | :-----: |
+| page | string | Page Number |    No    |    1     |
+
+## Request Samples
+
+<Tabs items={["JavaScript", "Python"]}>
+  <Tab>
+    <>
+        ```js
+        import axios from "axios";
+
+        const url = "http:localhost:3000//latest-manga?page={page}";
+        const data = async () => {
+            try {
+                const { data } = await axios.get(url);
+                return data;
+            } catch (err) {
+                throw new Error(err.message);
+            }
+        };
+
+        console.log(data);
+        ```
+    </>
+
+  </Tab>
+  <Tab>
+    <>
+        ```python
+        import requests
+
+        url = "http:localhost:3000//latest-manga?page={page}"
+        response = requests.get(url)
+        data = response.json()
+
+        print(data)
+        ```
+    </>
+
+  </Tab>
+</Tabs>
+
+## Response Schema
+
+<Tabs items={["200 OK", "404 Not Found", "500 Internal Server Error"]}>
+  <Tab>
+  **MIME Type:** `application/json`
+  ```json copy=false
+  [
+    {
+      "title": "string", // example: Dragon Ball Super
+      "cover": "string", // https://imgs-2.2xstorage.com/thumb/dragon-ball-super.webp
+      "id": "string", // dragon-ball-super
+      "latest_chapter": "string", // Chapter 104
+      "latest_chapter_id": "string", // chapter-104
+      "views": "string" // 13,475,937
+    },
+    ...
+  ]
+  ```
+  </Tab>
+  <Tab>
+  **MIME Type:** `application/json`
+  ```json copy=false
+  "message": {}
+  ```
+  </Tab>
+  <Tab>
+  **MIME Type:** `application/json`
+  ```json copy=false
+  "message": {}
+  ```
+  </Tab>
+</Tabs>

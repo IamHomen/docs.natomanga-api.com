@@ -1,0 +1,19 @@
+{
+  "index": "Introduction",
+  "list-of-providers": "List of Providers",
+  "faq": "FAQ",
+  "rest-api": "API",
+  "node-library": "Node Library",
+  "license": {
+    "title": "License 📜",
+    "type": "page",
+    "href": "https://raw.githubusercontent.com/IamHomen/NatoMangaAPI/master/LICENSE",
+    "newWindow": true
+  },
+  "contact": {
+    "title": "Contact ✉️",
+    "type": "page",
+    "href": "mailto:homen0.0000@gmail.com",
+    "newWindow": true
+  }
+}

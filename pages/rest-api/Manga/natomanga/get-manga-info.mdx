@@ -1,0 +1,110 @@
+---
+title: NatoManga | Manga Info
+---
+
+import { Tab, Tabs } from "nextra-theme-docs";
+
+# Get Manga Info
+
+Technical details regarding the usage of the get manga info function for the NatoManga provider can be found below. Example code is provided for both JavaScript and Python, along with a response schema.
+
+## Route Schema (URL)
+
+```
+http://localhost:3000/details/{id}
+```
+
+## Query Parameters
+
+| Parameter |  Type  | Description                                                                                            | Required? | Default |
+| :-------: | :----: | ------------------------------------------------------------------------------------------------------ | :-------: | :-----: |
+|    id     | string | The NatoManga ID of the manga; i.e. provided by searching for said manga and selecting the correct one. |    Yes    |         |
+
+## Request Samples
+
+<Tabs items={["JavaScript", "Python"]}>
+  <Tab>
+    <>
+        ```js
+        import axios from "axios";
+
+        // Using the example ID of "259dfd8a-f06a-4825-8fa6-a2dcd7274230".
+        const url = "http://localhost:3000/details/super-dragon-ball";
+        const data = async () => {
+            try {
+                const { data } = await axios.get(url);
+                return data;
+            } catch (err) {
+                throw new Error(err.message);
+            }
+        };
+
+        console.log(data);
+        ```
+    </>
+
+  </Tab>
+  <Tab>
+    <>
+        ```python
+        import requests
+
+        # Using the example ID of "259dfd8a-f06a-4825-8fa6-a2dcd7274230".
+        url = "http://localhost:3000/details/super-dragon-ball"
+        response = requests.get(url)
+        data = response.json()
+
+        print(data)
+        ```
+    </>
+
+  </Tab>
+</Tabs>
+
+## Response Schema
+
+<Tabs items={["200 OK", "400 Bad Request", "404 Not Found", "500 Internal Server Error"]}>
+  <Tab>
+  **MIME Type:** `application/json`
+  ```json copy=false
+  {
+  "title": "Dragon Ball Super",
+  "cover": "https://imgs-2.2xstorage.com/thumb/dragon-ball-super.webp",
+  "author": "Toriyama Akira",
+  "updated": "Feb-19-2025 07:33:35 PM",
+  "status": "Ongoing",
+  "genres": [
+    "Shounen"
+  ],
+  "synopsis": "Dragon Ball Super follows the aftermath of Goku's fierce battle with Majin Buu, as he attempts to maintain earth's fragile peace. Having defeated Majin Buu, Goku is starting to get bored with his life on Earth. His wife, Chi-chi, wants him to get a job, but all he wants to do is train and fight stronger enemies. Elsewhere in the universe, the God of Destruction, Beerus, and his attendant Whis are traveling from planet to planet in search of food and entertainment. After blowing up some hapless victims, Beerus is reminded of a man from his dreams with the moniker “Super Saiyan God,” or something like that... The God of Destruction sets his sights on Earth to track down this mysterious man! Maybe this will give Goku something to do?",
+  "chapters": [
+    {
+      "title": "Chapter 104",
+      "manga_id": "dragon-ball-super",
+      "chapter_id": "chapter-104",
+      "views": "4,199",
+      "upload_time": "Feb-19-2025 07:33"
+    }
+  ]
+  }
+  ```
+  </Tab>
+  <Tab>
+  **MIME Type:** `application/json`
+  ```json copy=false
+  "message": {}
+  ```
+  </Tab>
+  <Tab>
+  **MIME Type:** `application/json`
+  ```json copy=false
+  "message": {}
+  ```
+  </Tab>
+  <Tab>
+  **MIME Type:** `application/json`
+  ```json copy=false
+  "message": {}
+  ```
+  </Tab>
+</Tabs>
