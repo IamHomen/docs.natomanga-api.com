@@ -65,23 +65,17 @@ http:localhost:3000/latest-manga?page={page}
   <Tab>
   **MIME Type:** `application/json`
   ```json copy=false
-  {
-"currentPage": "1",
-"totalResults": "54447",
-"hasNextPage": true,
-"hasPrevPage": false,
-"results": [
-  {
-    "title": "Martial Peak",
-    "cover": "https://img-r1.2xstorage.com/thumb/martial-peak.webp",
-    "id": "martial-peak",
-    "latest_chapter": "Chapter 3827",
-    "latest_chapter_id": "chapter-3827",
-    "views": "726,021,744"
-  },
-  ...
-]
-}
+  [
+    {
+      "title": "string", // example: Dragon Ball Super
+      "cover": "string", // https://imgs-2.2xstorage.com/thumb/dragon-ball-super.webp
+      "id": "string", // dragon-ball-super
+      "latest_chapter": "string", // Chapter 104
+      "latest_chapter_id": "string", // chapter-104
+      "views": "string" // 13,475,937
+    },
+    ...
+  ]
   ```
   </Tab>
   <Tab>

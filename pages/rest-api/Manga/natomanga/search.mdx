@@ -30,7 +30,7 @@ http:localhost:3000/search?keyw={keyw}&page={page}
         import axios from "axios";
 
         // Using the example query "demon".
-        const url = "http:localhost:3000/search?keyw=Dragon Ball Super&page=1";
+        const url = "http:localhost:3000/search?keyw=Demon&page=1";
         const data = async () => {
             try {
                 const { data } = await axios.get(url);
@@ -51,7 +51,7 @@ http:localhost:3000/search?keyw={keyw}&page={page}
         import requests
 
         # Using the example query "demon".
-        url = "http:localhost:3000/search?keyw=Dragon Ball Super&page=1";
+        url = "http:localhost:3000/search?keyw=Demon&page=1";
         response = requests.get(url)
         data = response.json()
 
@@ -68,22 +68,16 @@ http:localhost:3000/search?keyw={keyw}&page={page}
   <Tab>
   **MIME Type:** `application/json`
   ```json copy=false
-  {
-"currentPage": "1",
-"totalResults": "54447",
-"hasNextPage": true,
-"hasPrevPage": false,
-"results": [
-  {
-    "title": "Dragon Ball Super",
-    "cover": "https://imgs-2.2xstorage.com/thumb/dragon-ball-super.webp",
-    "id": "martial-peak",
-    "views": "726,021,744",
-    "updated": "Feb-19-2025 11:33"
-  },
-  ...
-]
-}
+  [
+    {
+      "title": "string",
+      "cover": "string",
+      "id": "string",
+      "views": "string",
+      "updated": "string" // Example: Feb-19-2025 11:33
+    },
+    ...
+  ]
   ```
   </Tab>
 </Tabs>
