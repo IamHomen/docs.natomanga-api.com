@@ -4,7 +4,7 @@
   "description": "The new and improved documentation for Consumet",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start"
   },
   "repository": {
