@@ -4,13 +4,13 @@ import { DocsThemeConfig, useTheme } from "nextra-theme-docs";
 const config: DocsThemeConfig = {
   gitTimestamp: false,
   useNextSeoProps: () => {
-    return { titleTemplate: `%s ~ NatoMangaAPI` };
+    return { titleTemplate: `%s ~ HomenAPI` };
   },
   faviconGlyph: "🚧",
   banner: {
-    text: "🚧 The NatoMangaAPI documentation is undergoing reconstruction. Please be patient for provider to be fully-documented. 🚧",
+    text: "🚧 The HomenAPI documentation is undergoing reconstruction. Please be patient for provider to be fully-documented. 🚧",
   },
-  logo: <span>NatoManga API Documentation</span>,
+  logo: <span>HomenAPI Documentation</span>,
   navbar: {
     extraContent: () => {
       const theme = useTheme();
@@ -55,13 +55,13 @@ const config: DocsThemeConfig = {
   chat: {
     link: "https://discord.gg/consumet",
   },
-  docsRepositoryBase: "https://github.com/IamHomen/NatoMangaAPI/tree/main",
+  docsRepositoryBase: "https://github.com/IamHomen/HomenAPI/tree/main",
   footer: {
-    text: "Copyright (c) NatoManga | 2024-present",
+    text: "Copyright (c) HomenAPI | 2024-present",
   },
   head: function useHead() {
     const description =
-      "A collection of documentation for NatoManga provider available on NatoMangaAPI. Find out how to efficiently use the Natomanga API here!";
+      "A collection of documentation for numerous provider available on HomenAPI. Find out how to efficiently use the HomenAPI here!";
     return (
       <>
         <meta httpEquiv="Content-Language" content="en" />

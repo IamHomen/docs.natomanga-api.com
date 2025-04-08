@@ -11,7 +11,7 @@ Technical details regarding the usage of the get manga info function for the Nat
 ## Route Schema (URL)
 
 ```
-http://localhost:3000/details/{id}
+http://localhost:3000/manga/natomanga/details/{id}
 ```
 
 ## Query Parameters
@@ -28,8 +28,7 @@ http://localhost:3000/details/{id}
         ```js
         import axios from "axios";
 
-        // Using the example ID of "259dfd8a-f06a-4825-8fa6-a2dcd7274230".
-        const url = "http://localhost:3000/details/super-dragon-ball";
+        const url = "http://localhost:3000/manga/natomanga/details/super-dragon-ball";
         const data = async () => {
             try {
                 const { data } = await axios.get(url);
@@ -49,8 +48,7 @@ http://localhost:3000/details/{id}
         ```python
         import requests
 
-        # Using the example ID of "259dfd8a-f06a-4825-8fa6-a2dcd7274230".
-        url = "http://localhost:3000/details/super-dragon-ball"
+        url = "http://localhost:3000/manga/natomanga/details/super-dragon-ball"
         response = requests.get(url)
         data = response.json()
 

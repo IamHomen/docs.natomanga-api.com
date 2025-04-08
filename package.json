@@ -1,7 +1,7 @@
 {
-  "name": "docs.natomanga.org",
+  "name": "docs.homenapi.org",
   "version": "0.0.1-beta",
-  "description": "The new and improved documentation for Consumet",
+  "description": "The new and improved documentation for homenapi",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IamHomen/NatoMangaAPI.git"
+    "url": "git+https://github.com/IamHomen/HomenAPI.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IamHomen/NatoMangaAPI/issues"
+    "url": "https://github.com/IamHomen/HomenAPI/issues"
   },
-  "homepage": "https://github.com/IamHomen/NatoMangaAPI/#readme",
+  "homepage": "https://github.com/IamHomen/HomenAPI/#readme",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "2.0.1",

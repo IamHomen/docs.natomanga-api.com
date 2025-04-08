@@ -11,7 +11,7 @@ Technical details regarding the usage of the get Manga Latest Chapter Update fun
 ## Route Schema (URL)
 
 ```
-http:localhost:3000/manga/natomanga/latest-manga?page=1
+http:localhost:3000/latest-manga?page={page}
 ```
 
 ## Query Parameters
@@ -28,7 +28,7 @@ http:localhost:3000/manga/natomanga/latest-manga?page=1
         ```js
         import axios from "axios";
 
-        const url = "http:localhost:3000/manga/natomanga/latest-manga?page=1";
+        const url = "http:localhost:3000//latest-manga?page={page}";
         const data = async () => {
             try {
                 const { data } = await axios.get(url);
@@ -48,7 +48,7 @@ http:localhost:3000/manga/natomanga/latest-manga?page=1
         ```python
         import requests
 
-        url = "http:localhost:3000/manga/natomanga/latest-manga?page=1";
+        url = "http:localhost:3000//latest-manga?page={page}"
         response = requests.get(url)
         data = response.json()
 

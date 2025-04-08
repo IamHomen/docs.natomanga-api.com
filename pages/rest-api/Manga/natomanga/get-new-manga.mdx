@@ -11,7 +11,7 @@ Technical details regarding the usage of the get New Manga function for the Nato
 ## Route Schema (URL)
 
 ```
-http:localhost:3000/new-manga?page={page}
+http:localhost:3000/manga/natomanga/new-manga?page={page}
 ```
 
 ## Query Parameters
@@ -28,7 +28,7 @@ http:localhost:3000/new-manga?page={page}
         ```js
         import axios from "axios";
 
-        const url = "http:localhost:3000/new-manga?page={page}";
+        const url = "http:localhost:3000/manga/natomanga/new-manga?page=1";
         const data = async () => {
             try {
                 const { data } = await axios.get(url);
@@ -48,7 +48,7 @@ http:localhost:3000/new-manga?page={page}
         ```python
         import requests
 
-        url = "http:localhost:3000/new-manga?page=1"
+        url = "http:localhost:3000/manga/natomanga/new-manga?page=1"
         response = requests.get(url)
         data = response.json()
 
