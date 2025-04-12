@@ -1,5 +1,5 @@
 ---
-title: mangadex | Manga Chapter Pages
+title: NatoManga | Manga Chapter Pages
 ---
 
 import { Tab, Tabs } from "nextra-theme-docs";
@@ -11,14 +11,15 @@ Technical details regarding the usage of the get manga chapter pages function fo
 ## Route Schema (URL)
 
 ```
-https://api.consumet.org/manga/mangadex/read/5f7891b4-f048-4516-9c75-7bcd6dbd1451/{chapterId}
+http://localhost:3000/manga/natomanga/chapters/{id}/{chapter_id}
 ```
 
 ## Query Parameters
 
 | Parameter |  Type  | Description                                                                                              | Required? | Default |
 | :-------: | :----: | -------------------------------------------------------------------------------------------------------- | :-------: | :-----: |
-| chapterId | string | The mangadex ID of the chapter; i.e. provided by searching for said anime and selecting the correct one. |    Yes    |         |
+| id | string | Example: land-of-monsters |    Yes    |         |
+| chapter_id | string | Example: chapter-10 |    Yes    |         |
 
 ## Request Samples
 
@@ -28,8 +29,9 @@ https://api.consumet.org/manga/mangadex/read/5f7891b4-f048-4516-9c75-7bcd6dbd145
         ```js
         import axios from "axios";
 
-        // Using the example chapter ID of "5f7891b4-f048-4516-9c75-7bcd6dbd1451"
-        const url = "https://api.consumet.org/manga/mangadex/read/5f7891b4-f048-4516-9c75-7bcd6dbd1451";
+        // Using the example chapter ID of "chapter-10"
+        // Using the example id of "land-of-monsters"
+        const url = "http://localhost:3000/manga/natomanga/chapters/land-of-monsters/chapter-10";
         const data = async () => {
             try {
                 const { data } = await axios.get(url);
@@ -49,8 +51,9 @@ https://api.consumet.org/manga/mangadex/read/5f7891b4-f048-4516-9c75-7bcd6dbd145
         ```python
         import requests
 
-        # Using the example chapter ID of "5f7891b4-f048-4516-9c75-7bcd6dbd1451"
-        url = "https://api.consumet.org/manga/mangadex/read/5f7891b4-f048-4516-9c75-7bcd6dbd1451"
+        # Using the example chapter ID of "chapter-10"
+        # Using the example id of "land-of-monsters"
+        url = "http://localhost:3000/manga/natomanga/chapters/land-of-monsters/chapter-10"
         response = requests.get(url)
         data = response.json()
 
@@ -67,14 +70,28 @@ https://api.consumet.org/manga/mangadex/read/5f7891b4-f048-4516-9c75-7bcd6dbd145
   <Tab>
   **MIME Type:** `application/json`
   ```json copy=false
-  [
+  {
+  "totalChapters": "10",
+  "id": "land-of-monsters",
+  "currentChapter": "Chapter 10",
+  "hasNextChapter": false,
+  "hasPrevChapter": true,
+  "nextChapterId": null,
+  "prevChapterId": "chapter-9",
+  "chapterImages": [
     {
-      "page": number,
-      "img": "string",
-      "headerForImage": "string"
+      "src": "https://img-r1.2xstorage.com/land-of-monsters/10/0.webp",
+      "alt": "Land of Monsters Chapter 10 page 1",
+      "title": "Land of Monsters Chapter 10 page 1"
+    },
+    {
+      "src": "https://img-r1.2xstorage.com/land-of-monsters/10/1.webp",
+      "alt": "Land of Monsters Chapter 10 page 2",
+      "title": "Land of Monsters Chapter 10 page 2"
     },
     ...
   ]
+}
   ```
   </Tab>
   <Tab>
